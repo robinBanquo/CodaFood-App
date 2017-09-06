@@ -1,6 +1,6 @@
 ![FastFood](intro.jpg)
 
-# Projet Appli Mobile CodaF(ôÔ)D
+# Projet Appli Mobile CodaFôÔD
 
 #### Objectif
 * Créer une appli mobile à l'aide d'un **framework js** (Meteor, Ionic...) 
@@ -96,3 +96,4 @@ _____________
       - Gérer les commandes(priorisation, suppression)
 
 
+**Bonus** Créer une intro pour l'appli et une icone(launcher) !
