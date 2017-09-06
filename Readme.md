@@ -1,6 +1,6 @@
 
 ![FastFood](intro.jpg)
-## Fast-Food App
+<h1 style="color:green">Fast-Food App</h1>
 
 # Projet Appli Mobile CodaFôÔD
 
