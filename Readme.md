@@ -1,8 +1,8 @@
 
 ![FastFood](intro.jpg)
-# Fast-Food App
+## Fast-Food App
 
-## Projet Appli Mobile CodaFôÔD
+# Projet Appli Mobile CodaFôÔD
 
 ## Objectif
 * Créer une appli mobile à l'aide d'un **framework js** (Meteor, Ionic...) 
