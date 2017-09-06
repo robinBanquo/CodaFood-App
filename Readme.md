@@ -17,17 +17,17 @@ qui permette de proposer un service de restauration rapide en ligne.
     
     2/ Une présentation des différentes catégories de produits :
 
-     - Pizzas
-     - Burgers
-     - Salades
-     - Boissons
-     - Desserts  
+      - Pizzas
+      - Burgers
+      - Salades
+      - Boissons
+      - Desserts  
      
 * Un menu comprenant :
      
-     - Une section **login / Inscription**
-     - Une section **panier** 
-     - Une section **contact** 
+      - Une section **login / Inscription**
+      - Une section **panier** 
+      - Une section **contact** 
 
 #### Page login
 
@@ -36,17 +36,18 @@ qui permette de proposer un service de restauration rapide en ligne.
    **Attention !** Pour pouvoir s'inscrire il faut figurer parmi les codes postaux dans un rayon de 10kms ([déterminer les codes postaux](http://www.codepostauxfrance.com/rayon-de-recherche-par-code-postal))
    Donc prévoir un champ pour connaitre le code postal de l'utilisateur et seulement après validation du code, proposer le formulaire d'inscription avec :
      
-     - Nom
-     - Prénom
-     - email 
-     - Mot de passe
-     - Numero de téléphone
-     - Adresse de livraison(numero de rue, nom de rue, ville)
-     - Commentaire(pour un accès difficile...)
+      - Nom
+      - Prénom
+      - email 
+      - Mot de passe
+      - Numero de téléphone
+      - Adresse de livraison(numero de rue, nom de rue, ville)
+      - Commentaire(pour un accès difficile...)
      
 * Créer un formulaire permettant de **se loguer** avec :
-     - email     
-     - Mot de passe
+
+      - email     
+      - Mot de passe
              
      
 #### Page panier
