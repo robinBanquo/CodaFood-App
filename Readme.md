@@ -4,7 +4,7 @@
 
 ## Projet Appli Mobile CodaFôÔD
 
-### Objectif
+## Objectif
 * Créer une appli mobile à l'aide d'un **framework js** (Meteor, Ionic...) 
 qui permette de proposer un service de restauration rapide à domicile.
 * Les ressources graphiques sont fournies mais vous pouvez en choisir d'autres !
