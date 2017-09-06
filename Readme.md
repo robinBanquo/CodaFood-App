@@ -96,4 +96,4 @@ _____________
       - Gérer les commandes(priorisation, suppression)
 
 
-**Bonus** Créer une intro pour l'appli et une icone(launcher) !
+**Bonus** Créer une intro(launcher screen) pour l'appli et une icone(launcher) !
