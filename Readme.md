@@ -34,7 +34,7 @@ qui permette de proposer un service de restauration rapide en ligne.
 * Créer un formulaire permettant de **s'inscrire** avec :  
    
    **Attention !** Pour pouvoir s'inscrire il faut figurer parmi les codes postaux dans un rayon de 10kms ([déterminer les codes postaux](http://www.codepostauxfrance.com/rayon-de-recherche-par-code-postal))
-   Donc prévoir un champ pour connaitre le code postal de l'utilisateur et seulement après validation du code, proposer le formulaire d'inscription avec :
+   Donc prévoir un champ pour connaitre le code postal de l'utilisateur et seulement après validation du code postal, proposer le formulaire d'inscription avec :
      
       - Nom
       - Prénom
@@ -43,7 +43,9 @@ qui permette de proposer un service de restauration rapide en ligne.
       - Numero de téléphone
       - Adresse de livraison(numero de rue, nom de rue, ville)
       - Commentaire(pour un accès difficile...)
-     
+      
+    Sinon, prévoir un message **"Nous ne livrons pas ce code postal, veuillez nous en excuser."** 
+
 * Créer un formulaire permettant de **se loguer** avec :
 
       - email     
