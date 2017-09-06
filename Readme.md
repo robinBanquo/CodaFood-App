@@ -25,9 +25,9 @@ qui permette de proposer un service de restauration rapide en ligne.
      
 * Un menu comprenant :
      
-      - Une section **login / Inscription**
-      - Une section **panier** 
-      - Une section **contact** 
+     - Une section **login / Inscription**
+     - Une section **panier** 
+     - Une section **contact** 
 
 #### Page login
 
