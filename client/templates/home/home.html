@@ -1,0 +1,14 @@
+<template name="home">
+<h1>Notre Carte</h1>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        {{#each category in categories}}
+            <div class="col-sm-2">
+                <img src="{{category.src}}" alt="">
+                {{category.name}}
+            </div>
+        {{/each}}
+        <div class="col-sm-1">
+        </div>
+    </div>
+</template>
