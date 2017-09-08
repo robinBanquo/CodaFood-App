@@ -10,17 +10,23 @@ Template.home.helpers({
         {name: "Boissons",
             src:"Boissons.png"},
         {name: "Desserts",
-            src:"Desserts.png"},
+            src:"Desserts.png"}
 
-    ]
+    ],
+    selectedCategory: function(){
+        return selectedCategory.get()}
+
 });
 
 Template.home.events({
-    //add your events here
+    'category-header click': function (e) {
+        selectedCategory.set("");
+    }
 });
 
 Template.home.onCreated(function () {
     //add your statement here
+    selectedCategory = new ReactiveVar("invisible")
 });
 
 Template.home.onRendered(function () {

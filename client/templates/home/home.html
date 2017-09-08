@@ -3,12 +3,18 @@
     <div class="row">
         <div class="col-sm-1"></div>
         {{#each category in categories}}
-            <div class="col-sm-2 category-header">
+            <div class="col-sm-2 category-header {{category.name}}">
                 <img src="/images/category_logo/{{category.src}}" alt="{{category.name}}-logo" class="category-logo">
                 <h3>{{category.name}}</h3>
             </div>
         {{/each}}
         <div class="col-sm-1">
+        </div>
+        <div class="products {{selectedCategory}}">
+            zefdqzefqzef
+            {{#each shownProducts}}
+
+            {{/each}}
         </div>
     </div>
 </template>
