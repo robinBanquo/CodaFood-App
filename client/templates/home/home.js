@@ -14,19 +14,21 @@ Template.home.helpers({
 
     ],
     selectedCategory: function(){
-        return selectedCategory.get()}
+        return Template.instance().selectedCategory.get()}
 
 });
 
 Template.home.events({
-    'category-header click': function (e) {
-        selectedCategory.set("");
+    'click .category-header': function (event, template) {
+
+        template.selectedCategory.set("fsff");
+        console.log(template.selectedCategory.get())
     }
 });
 
 Template.home.onCreated(function () {
     //add your statement here
-    selectedCategory = new ReactiveVar("invisible")
+    this.selectedCategory = new ReactiveVar("invisible")
 });
 
 Template.home.onRendered(function () {
