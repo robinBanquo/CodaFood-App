@@ -1,11 +1,11 @@
 <template name="home">
-<h1>Notre Carte</h1>
+<h1 class="text-center">Notre Carte</h1>
     <div class="row">
         <div class="col-sm-1"></div>
         {{#each category in categories}}
-            <div class="col-sm-2">
-                <img src="{{category.src}}" alt="">
-                {{category.name}}
+            <div class="col-sm-2 category-header">
+                <img src="/images/category_logo/{{category.src}}" alt="{{category.name}}-logo" class="category-logo">
+                <h3>{{category.name}}</h3>
             </div>
         {{/each}}
         <div class="col-sm-1">

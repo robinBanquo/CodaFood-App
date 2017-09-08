@@ -2,15 +2,15 @@ Template.home.helpers({
     //add you helpers here
     categories: [
         {name: "Pizzas",
-            src:""},
+            src:"Pizzas.png"},
         {name: "Burgers",
-            src:""},
+            src:"Burgers.png"},
         {name: "Salades",
-            src:""},
+            src:"Salades.png"},
         {name: "Boissons",
-            src:""},
+            src:"Boissons.png"},
         {name: "Desserts",
-            src:""},
+            src:"Desserts.png"},
 
     ]
 });
