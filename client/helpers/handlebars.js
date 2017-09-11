@@ -11,3 +11,17 @@ Template.registerHelper('showCategoryMobile', function (currentCategory, selecte
     return (currentCategory === selectedCategory)? "": "hidden";
 
 });
+
+Template.registerHelper('carousselVisible', function (index) {
+    return (index<3) ? "" : "hidden";
+});
+
+Template.registerHelper('showPrice', function (price) {
+  let goodPrice =  price.toString().replace(".", "€");
+    goodPrice =  goodPrice.replace("€5", "€50");
+    if(goodPrice.indexOf("€") === -1){
+      goodPrice += "€";
+    }
+
+  return goodPrice;
+});

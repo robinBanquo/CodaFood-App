@@ -40,9 +40,19 @@ Template.home.events({
 
         $(event.target).css("padding-bottom", "60px");
         $(event.target).css("margin-bottom", "0");
+
+    },
+    'click .left-slide' : function (event,instance) {
+
+        let newCentralItem = (instance.visibleItem.get() === 0 )? 5 : instance.visibleItem.get()-1;
+        instance.visibleItem.set(newCentralItem);
+        slider(newCentralItem);
+    },
+    'click .right-slide' : function (event,instance) {
+        let newCentralItem = (instance.visibleItem.get() === 5) ? 0 : instance.visibleItem.get()+1;
+        instance.visibleItem.set(newCentralItem);
+        slider(newCentralItem);
     }
-
-
 });
 
 Template.home.onCreated(function () {
@@ -50,6 +60,7 @@ Template.home.onCreated(function () {
     //on crée au lancement deux réactive var pour nous aider
     this.selectedCategory = new ReactiveVar("invisible");
     this.shownProducts = new ReactiveVar([]);
+    this.visibleItem = new ReactiveVar(1);
 });
 
 Template.home.onRendered(function () {
@@ -60,3 +71,16 @@ Template.home.onDestroyed(function () {
     //add your statement here
 });
 
+function slider(centralItem) {
+    console.log(centralItem);
+    let itemsToShow = [
+        centralItem === 0 ? 5: centralItem - 1,
+        centralItem,
+        centralItem === 5 ? 0: centralItem + 1
+    ];
+
+    $(".caroussel-item").addClass("hidden");
+    _.each(itemsToShow, function (itemToshow) {
+        $("#caroussel-"+itemToshow).removeClass("hidden");
+    })
+}
