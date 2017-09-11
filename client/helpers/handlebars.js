@@ -6,3 +6,8 @@ Template.registerHelper('pluralize', function(n, thing) {
     return n + ' ' + thing + 's';
   }
 });
+
+Template.registerHelper('showCategoryMobile', function (currentCategory, selectedCategory) {
+    return (currentCategory === selectedCategory)? "": "hidden";
+
+});
