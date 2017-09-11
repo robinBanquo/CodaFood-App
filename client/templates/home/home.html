@@ -24,21 +24,16 @@
     </div>
     {{! version desktop}}
    <div class="row hidden-xs">
-       <div class="products {{selectedCategory}} row col-sm-offset-1 col-sm-10">
-           <div class="col-md-12">
-               <div class="carousel slide multi-item-carousel" id="theCarousel">
-                   <div class="carousel-inner">
-                        {{#each product in shownProducts}}
-                            <div class="item {{isItemActive @index}}" >
-                                <div class="col-sm-4">
-                                    {{> prod product}}
-                                </div>
-                            </div>
-                        {{/each}}
-                   </div>
-                   <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                   <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-               </div>
+       <div class="products {{selectedCategory}} col-sm-offset-1 col-sm-10 row">
+
+
+                            {{#each product in shownProducts}}
+
+                                    <div class="col-xs-4" id="product-{{@index}}">
+                                        {{> prod product}}
+                                    </div>
+                            {{/each}}
+
            </div>
        </div>
 
@@ -56,5 +51,4 @@
                 <!--</a>-->
 
         <!--</div>-->
-    </div>
 </template>

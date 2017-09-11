@@ -21,7 +21,7 @@
       <ul class="nav navbar-nav navbar-right">
           {{#if currentUser }}
               {{ currentUser.userName}}
-              {{else}}
+          {{else}}
           <li class="{{activeRouteClass 'login'}}">
               <a href="{{pathFor 'login'}}">Connexion / inscription</a>
           </li>

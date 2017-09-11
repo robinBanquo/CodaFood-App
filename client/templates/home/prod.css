@@ -1,0 +1,16 @@
+.prod{
+    padding: 40px 10px;
+}
+
+#product-1, #product-4{
+    border-style: solid;
+    border-color: white;
+    border-width: 0 2px ;
+}
+
+.price{
+    font-style: oblique;
+}
+.selector{
+    margin: 20px;
+}

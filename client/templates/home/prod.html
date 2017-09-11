@@ -1,13 +1,13 @@
 <template name="prod">
-    <div class="text-center">
+    <div class="text-center prod">
     <img src="/images/{{imgSrc}}" alt="photo de {{name}}" class="category-logo">
 
     <h4>{{name}}</h4>
     <p><i>{{description}}</i></p>
-    <span class="price">{{showPrice price}}</span>
-        <div class="row">
-            <button class="col-xs-3 col-xs-offset-1 btn btn-xs btn-default"><span class="glyphicon glyphicon-minus"></span></button>
-            <div class="col-xs-4"><strong>0</strong></div>
+        <span class="price"><b>{{showPrice price}}</b></span>
+        <div class="row selector">
+            <button class="col-xs-3 col-xs-offset-2 btn btn-xs btn-default"><span class="glyphicon glyphicon-minus"></span></button>
+            <div class="col-xs-2"><strong>0</strong></div>
             <button class="col-xs-3 btn btn-xs btn-default"><span class="glyphicon glyphicon-plus"></span></button>
         </div>
     </div>
