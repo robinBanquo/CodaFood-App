@@ -37,7 +37,7 @@ if(Products.find().count() === 0) {
                 name: categories[i].products[j],
                 category: categories[i].name,
                 imgSrc: categories[i].src + (j+1) + ".png",
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius error eum excepturi facere facilis id illo, illum iusto necessitatibus rem.",
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
                 price: price
             }
         )

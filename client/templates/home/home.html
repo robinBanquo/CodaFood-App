@@ -9,10 +9,10 @@
             </div>
         {{! version mobile}}
             <div class="visible-xs">
-                <div class="row {{showCategoryMobile category.name selectedCategory}}">
-                    <div class="products-xs {{selectedCategory}} row col-sm-offset-1 col-sm-10">
+                <div class=" {{showCategoryMobile category.name selectedCategory}}">
+                    <div class="products-xs products {{selectedCategory}} ">
                         {{#each product in shownProducts}}
-                            <p>{{product.name}}</p>
+                            {{> prod product}}
                         {{/each}}
                     </div>
                 </div>
@@ -26,7 +26,9 @@
     <div class="row hidden-xs">
         <div class="products {{selectedCategory}} row col-sm-offset-1 col-sm-10">
             {{#each product in shownProducts}}
-                <p>{{product.name}}</p>
+                <div class="col-sm-4 ">
+                {{> prod product}}
+                </div>
             {{/each}}
         </div>
     </div>
