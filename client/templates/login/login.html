@@ -1,6 +1,28 @@
 <template name="login">
     <div class="row">
-        <div class="col-sm-6"></div>
-        <div class="col-sm-6"></div>
+        <div class="col-sm-6">
+            <h2>Inscription</h2>
+            <p>Veuillez renseignez votre code postal pour savoir si on peu vous ammener la bouffe a la maison</p>
+            <form >
+                <div class="form-group">
+                   <input class="form-control" type="text" placeholder="30100 , 30120, etc...">
+                </div>
+                <input type="submit" class="btn btn-success" value="inscription">
+            </form>
+        </div>
+        <div class="col-sm-6">
+<h2>Connexion</h2>
+            <form name="login">
+                <div class="form-group">
+                    <label for="username" class="label">Nom d'utilisateur</label>
+                    <input type="text" class="form-control" placeholder="tape ici komment ke tu t'appel!">
+                </div>
+                <div class="form-group">
+                    <label for="password" class="label">passord</label>
+                    <input type="text" class="form-control" placeholder=" ha! ha! ha! vous n'avez pas dit le mot magique">
+                </div>
+                <input type="submit" class="btn btn-success" value="Connexion">
+            </form>
+        </div>
     </div>
 </template>
