@@ -41,18 +41,18 @@ Template.home.events({
         $(event.target).css("padding-bottom", "60px");
         $(event.target).css("margin-bottom", "0");
 
-    },
-    'click .left-slide' : function (event,instance) {
-
-        let newCentralItem = (instance.visibleItem.get() === 0 )? 5 : instance.visibleItem.get()-1;
-        instance.visibleItem.set(newCentralItem);
-        slider(newCentralItem);
-    },
-    'click .right-slide' : function (event,instance) {
-        let newCentralItem = (instance.visibleItem.get() === 5) ? 0 : instance.visibleItem.get()+1;
-        instance.visibleItem.set(newCentralItem);
-        slider(newCentralItem);
     }
+    // 'click .left-slide' : function (event,instance) {
+    //
+    //     let newCentralItem = (instance.visibleItem.get() === 0 )? 5 : instance.visibleItem.get()-1;
+    //     instance.visibleItem.set(newCentralItem);
+    //     slider(newCentralItem);
+    // },
+    // 'click .right-slide' : function (event,instance) {
+    //     let newCentralItem = (instance.visibleItem.get() === 5) ? 0 : instance.visibleItem.get()+1;
+    //     instance.visibleItem.set(newCentralItem);
+    //     slider(newCentralItem);
+    // }
 });
 
 Template.home.onCreated(function () {
@@ -65,13 +65,33 @@ Template.home.onCreated(function () {
 
 Template.home.onRendered(function () {
     //add your statement here
+    // Instantiate the Bootstrap carousel
+    $('.multi-item-carousel').carousel({
+        interval: false
+    });
+
+// for every slide in carousel, copy the next slide's item in the slide.
+// Do the same for the next, next item.
+    $('.multi-item-carousel .item').each(function(){
+        var next = $(this).next();
+        if (!next.length) {
+            next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+
+        if (next.next().length>0) {
+            next.next().children(':first-child').clone().appendTo($(this));
+        } else {
+            $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+        }
+    });
 });
 
 Template.home.onDestroyed(function () {
     //add your statement here
 });
 
-function slider(centralItem) {
+/*function slider(centralItem) {
     console.log(centralItem);
     let itemsToShow = [
         centralItem === 0 ? 5: centralItem - 1,
@@ -83,4 +103,4 @@ function slider(centralItem) {
     _.each(itemsToShow, function (itemToshow) {
         $("#caroussel-"+itemToshow).removeClass("hidden");
     })
-}
+}*/

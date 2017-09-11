@@ -12,8 +12,8 @@ Template.registerHelper('showCategoryMobile', function (currentCategory, selecte
 
 });
 
-Template.registerHelper('carousselVisible', function (index) {
-    return (index<3) ? "" : "hidden";
+Template.registerHelper('isItemActive', function (index) {
+    return (index == 0) ? "active" : "";
 });
 
 Template.registerHelper('showPrice', function (price) {
