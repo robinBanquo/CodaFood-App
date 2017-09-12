@@ -20,7 +20,10 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
           {{#if currentUser }}
-              {{ currentUser.userName}}
+              <li class="{{activeRouteClass 'login'}}">
+                  {{ currentUser.username}}
+                  <a href="#" disconnect>Déconnexion</a>
+              </li>
           {{else}}
           <li class="{{activeRouteClass 'login'}}">
               <a href="{{pathFor 'login'}}">Connexion / inscription</a>

@@ -10,3 +10,12 @@ Template.header.helpers({
     return active && 'active';
   }
 });
+Template.header.events({
+    "click [disconnect]" : function (event, instance) {
+        event.preventDefault();
+        console.log("ddqdqdq")
+        Meteor.logout(function () {
+            Router.go("home")
+        })
+    }
+})

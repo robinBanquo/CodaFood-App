@@ -46,4 +46,18 @@ if(Products.find().count() === 0) {
     _.each(products, function (product) {
         Products.insert(product)
     })
+
+    Accounts.createUser({
+        username: "robin",
+        email: "caramaschi@hotmail.com",
+        password:"123456",
+        profile: {
+            firstName: "robin",
+            lastName: "caramaschi",
+            phone: "003838744",
+            address: "address",
+            city: "city",
+            zipCode: 30100
+        }
+    })
 }

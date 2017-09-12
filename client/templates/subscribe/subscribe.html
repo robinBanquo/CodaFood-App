@@ -1,0 +1,43 @@
+<template name="subscribe">
+    <div class="row">
+        <form  class="col-sm-6 col-sm-offset-3 subscribe-form">
+            <h2>Informations client</h2>
+            <div class="form-group">
+                <label for="lastName">Nom</label>
+                <input type="text" class="form-control" name="lastName" placeholder="ton nom ici!" required>
+            </div>
+            <div class="form-group">
+                <label for="firstName">Prenom</label>
+                <input type="text" class="form-control" name="firstName" placeholder="ton prénom ici!" required>
+            </div>
+            <div class="form-group">
+                <label for="email">email</label>
+                <input type="email" class="form-control" name="email" placeholder="jackie-et-michel@grosbeaufdu30.conne" required>
+            </div>
+            <div class="form-group">
+                <label for="password">password</label>
+                <input type="text" class="form-control" name="password" placeholder="123456, password, azerty etc..." required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Telephone</label>
+                <input type="tel" class="form-control" name="phone" placeholder="08 412 412 412" required>
+            </div>
+            <hr>
+            <h2>Adresse de livraison</h2>
+            <div class="form-group">
+                <label for="address">Adresse de livraison</label>
+                <input type="text" class="form-control" name="address" placeholder="23 avenue du Général Tecktonik" required>
+            </div>
+            <div class="form-group">
+                <label for="city">Ville</label>
+                <input type="text" class="form-control" name="city" placeholder="Alès, la Grand Combe, etc..." required>
+            </div>
+            <div class="form-group">
+                <label for="zipCode">Code Postal</label>
+                <input type="text" class="form-control" name="zipCode" placeholder="30100, 30104, etc..." required value="{{zipCode}}">
+            </div>
+            <div class="danger">{{error}}</div>
+            <input type="submit" value="Envoyer" class="btn btn-success btn-block">
+        </form>
+    </div>
+</template>
