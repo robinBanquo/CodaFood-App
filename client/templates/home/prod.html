@@ -6,9 +6,15 @@
     <p><i>{{description}}</i></p>
         <span class="price"><b>{{showPrice price}}</b></span>
         <div class="row selector">
-            <button class="col-xs-3 col-xs-offset-2 btn btn-xs btn-default"><span class="glyphicon glyphicon-minus"></span></button>
-            <div class="col-xs-2"><strong>0</strong></div>
-            <button class="col-xs-3 btn btn-xs btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+
+            {{#if notInChosenProduct }}
+                <button class="btn btn-warning btn-xs command-prod">Commander</button>
+                {{else}}
+                <button class="col-xs-3 col-xs-offset-2 btn btn-xs btn-warning subs-prod"><span class="glyphicon glyphicon-minus"></span></button>
+            <div class="col-xs-2"><strong>{{quantity}}</strong></div>
+                <button class="col-xs-3 btn btn-xs btn-warning add-prod"><span class="glyphicon glyphicon-plus"></span></button>
+            {{/if}}
+
         </div>
     </div>
 </template>

@@ -61,9 +61,11 @@ Template.home.onCreated(function () {
     this.selectedCategory = new ReactiveVar("invisible");
     this.shownProducts = new ReactiveVar([]);
     this.visibleItem = new ReactiveVar(1);
+    //initialisation de la collection coté client
 });
 
 Template.home.onRendered(function () {
+
     //add your statement here
 });
 
