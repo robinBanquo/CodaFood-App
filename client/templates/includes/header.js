@@ -8,7 +8,16 @@ Template.header.helpers({
     });
     
     return active && 'active';
-  }
+  },
+    nbOfItem : function () {
+        let count = 0;
+
+        ChosenProducts.find().forEach( function (product) {
+            count += parseInt(product.quantity)
+        });
+
+        return count === 0 ? "" : count;
+    }
 });
 Template.header.events({
     "click [disconnect]" : function (event, instance) {

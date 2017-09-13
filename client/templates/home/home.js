@@ -17,10 +17,14 @@ Template.home.helpers({
     ],
     //permet de savoir quelle catégorie est selectionée
     selectedCategory: function(){
-        return Template.instance().selectedCategory.get()},
+        return Template.instance().selectedCategory.get()
+    },
     //liste racourcie des produits suivant la categorie selectionée
     shownProducts: function () {
         return Template.instance().shownProducts.get()
+    },
+    isProductsInCart : function () {
+        return ChosenProducts.find({}).count() !== 0
     }
 });
 

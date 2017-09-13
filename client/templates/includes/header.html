@@ -12,7 +12,7 @@
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav">
         <li class="{{activeRouteClass 'panier'}}">
-          <a href="{{pathFor 'panier'}}">Panier</a>
+          <a href="{{pathFor 'panier'}}">Panier <span class="badge ">{{nbOfItem}}</span></a>
         </li>
         <li class="{{activeRouteClass  'contact'}}">
           <a href="{{pathFor 'contact'}}">Contact</a>
