@@ -1,39 +1,43 @@
 <template name="home">
     <h1 class="text-center">Notre Carte</h1>
-    <div class="row">
-        <div class="col-sm-1"></div>
-        {{#each category in categories}}
-            <div class="col-sm-2 category-header {{category.name}}" id="{{category.name}}">
-                <img src="/images/category_logo/{{category.src}}" alt="{{category.name}}-logo" class="category-logo">
-                <h3>{{category.name}}</h3>
-            </div>
-        {{! version mobile}}
-            <div class="visible-xs">
-                <div class=" {{showCategoryMobile category.name selectedCategory}}">
-                    <div class="products-xs products {{selectedCategory}} ">
-                        {{#each product in shownProducts}}
-                            {{> prod product}}
-                        {{/each}}
+    <div class="col-xs-12">
+        <div class="row">
+            {{#each category in categories}}
+                <div class="col-sm-2 category-header {{category.name}}" id="{{category.name}}">
+                    <img src="/images/category_logo/{{category.src}}" alt="{{category.name}}-logo" class="category-logo">
+                    <h3>{{category.name}}</h3>
+                </div>
+            {{! version mobile}}
+                <div class="visible-xs">
+                    <div class=" {{showCategoryMobile category.name selectedCategory}}">
+                        <div class="products-xs products {{selectedCategory}} ">
+                            {{#each product in shownProducts}}
+                                {{> prod product}}
+                            {{/each}}
+                        </div>
                     </div>
                 </div>
+            {{/each}}
+            <div class="col-sm-2 category-header Panier">
+                <img src="/images/category_logo/Panier.png" alt="panier-logo" class="category-logo">
+                <h3>Panier</h3>
             </div>
-        {{/each}}
-    </div>
-    {{! version desktop}}
-   <div class="row hidden-xs">
-       <div class="products {{selectedCategory}} col-sm-offset-1 col-sm-10 row">
-           {{#each product in shownProducts}}
-               <div class="col-xs-4" id="product-{{@index}}">
-                        {{> prod product}}
-                    </div>
-           {{/each}}
+        </div>
+        {{! version desktop}}
+       <div class="row test">
+           <div class="products {{selectedCategory}} col-sm-10 row">
+               {{#each product in shownProducts}}
+                   <div class="col-xs-4" id="product-{{@index}}">
+                            {{> prod product}}
+                        </div>
+               {{/each}}
+           </div>
        </div>
    </div>
-    <br>
-    {{#if isProductsInCart }}
-
-    <button class="btn btn-lg btn-warning center-block">
-        <span class="glyphicon glyphicon-ok"></span> Passer la commande
-    </button>
-    {{/if }}
+   <br>
+   {{#if isProductsInCart }}
+       <button class="btn btn-lg btn-warning center-block">
+           <span class="glyphicon glyphicon-ok"></span> Passer la commande
+       </button>
+   {{/if }}
 </template>

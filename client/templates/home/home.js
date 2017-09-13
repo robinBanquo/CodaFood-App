@@ -70,9 +70,9 @@ Template.home.onCreated(function () {
 
 Template.home.onRendered(function () {
 
-    //add your statement here
 });
 
 Template.home.onDestroyed(function () {
     //add your statement here
 });
+
