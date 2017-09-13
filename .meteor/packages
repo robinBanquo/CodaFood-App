@@ -26,7 +26,7 @@ ian:accounts-ui-bootstrap-3
 check@1.2.5
 audit-argument-checks@1.0.7
 session@1.1.7
-shell-server
-dynamic-import
+shell-server@0.2.4
+dynamic-import@0.1.1
 mdg:geolocation
 veganworld:haversine
