@@ -17,11 +17,22 @@ Template.registerHelper('isItemActive', function (index) {
 });
 
 Template.registerHelper('showPrice', function (price) {
-  let goodPrice =  price.toString().replace(".", "€");
-    goodPrice =  goodPrice.replace("€5", "€50");
-    if(goodPrice.indexOf("€") === -1){
-      goodPrice += "€";
-    }
-
-  return goodPrice;
+  return goodprice(price);
 });
+
+Template.registerHelper('nameOfProduct', function (productId) {
+    return Products.findOne({_id : productId}).name
+});
+
+Template.registerHelper('subTotalPrice', function (productId , quantity) {
+    return goodprice(Products.findOne({_id : productId}).price * parseInt(quantity));
+});
+
+function goodprice(price) {
+    let goodPrice = price.toString().replace(".", "€");
+    goodPrice = goodPrice.replace("€5", "€50");
+    if (goodPrice.indexOf("€") === -1) {
+        goodPrice += "€";
+    }
+    return goodPrice;
+}

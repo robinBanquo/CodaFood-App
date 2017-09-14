@@ -25,6 +25,16 @@ Template.home.helpers({
     },
     isProductsInCart : function () {
         return ChosenProducts.find({}).count() !== 0
+    },
+    productsInCarts : function () {
+        return ChosenProducts.find().fetch()
+    },
+    totalPrice : function () {
+        let totalprice = 0
+        ChosenProducts.find({}).forEach(function (product) {
+            totalprice += Products.findOne({_id : product.product_id}).price * parseInt(product.quantity)
+        });
+        return totalprice;
     }
 });
 

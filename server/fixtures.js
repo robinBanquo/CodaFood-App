@@ -38,7 +38,7 @@ if(Products.find().count() === 0) {
                 category: categories[i].name,
                 imgSrc: categories[i].src + (j+1) + ".png",
                 description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-                price: price
+                price : price
             }
         )
         }
