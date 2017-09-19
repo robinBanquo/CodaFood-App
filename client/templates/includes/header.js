@@ -17,6 +17,9 @@ Template.header.helpers({
         });
 
         return count === 0 ? false : count;
+    },
+    showHistoryLink : function () {
+        return Meteor.user() && (Commands.find({}, {user_id : Meteor.userId()}).count() !== 0)
     }
 });
 Template.header.events({

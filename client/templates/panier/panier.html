@@ -3,11 +3,16 @@
         <div class="col-md-8 row">
             <h3>Votre Commande</h3>
             {{#each product in chosenProducts}}
-                <div class="col-md-3 {{product.category}}" style="margin: 5px">
+                <div class="col-md-3 {{product.category}}" style="border: 5px solid #222222">
                     {{>prod product}}
                 </div>
             {{/each}}
+            <hr>
+            <div class="text-center col-md-3 bg-success" style="border: 5px solid #222222">
+                <h3>{{showPrice totalPrice}}</h3>
+            </div>
         </div>
+
         <div class="col-md-4">
             {{#if currentUser}}
                 {{> deliveryAddress }}
@@ -19,6 +24,7 @@
         {{#if currentUser}}
         <div class="row text-center">
             <hr>
+            <div class="bg-danger">{{errorLocation}}</div>
             <button class="btn btn-warning" finalize-command>
                 Finaliser la commande
             </button>

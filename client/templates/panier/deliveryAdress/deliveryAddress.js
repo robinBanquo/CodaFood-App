@@ -6,6 +6,9 @@ Template.deliveryAddress.helpers({
     geolocActive : function () {
        return (Session.get('deliveryAddress').type === 'geoloc')?"btn-info": "btn-success";
     },
+    geolocActiveValid : function () {
+        return Session.get('deliveryAddress').type === 'geoloc';
+    },
     addressActive : function () {
         return (Session.get('deliveryAddress').type === 'address')?"address-active": "";
     }
@@ -30,7 +33,7 @@ Template.deliveryAddress.events({
         };
         Session.set('deliveryAddress', pos)
     },
-    'keypress input , click form' :function () {
+    'keypress input , click form, focusout input' :function () {
         let address = $('#address').val();
         let city = $('#city').val();
         let zipCode = $('#zipCode').val();
