@@ -42,7 +42,12 @@ Template.subscribe.events({
                 if(error){
                     instance.error.set("il y a une erreur dans le formulaire");
                 }else{
-                    Router.go("home");
+                    if(Session.get('redirectToCart')){
+                        Router.go("panier")
+                    }else{
+                        Router.go("home")
+                    }
+
                 }
             })
         }

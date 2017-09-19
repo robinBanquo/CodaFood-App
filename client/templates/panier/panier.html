@@ -1,3 +1,29 @@
 <template name="panier">
+    <div class="row">
+        <div class="col-md-8 row">
+            <h3>Votre Commande</h3>
+            {{#each product in chosenProducts}}
+                <div class="col-md-3 {{product.category}}" style="margin: 5px">
+                    {{>prod product}}
+                </div>
+            {{/each}}
+        </div>
+        <div class="col-md-4">
+            {{#if currentUser}}
+                {{> deliveryAddress }}
+            {{else}}
+                <h3>Veillez vous connecter pour finaliser votre commande</h3>
+                <button class="btn btn-success" redirect-login>Connexion</button>
+            {{/if}}
 
+        {{#if currentUser}}
+        <div class="row text-center">
+            <hr>
+            <button class="btn btn-warning" finalize-command>
+                Finaliser la commande
+            </button>
+        </div>
+        {{/if}}
+    </div>
+    </div>
 </template>

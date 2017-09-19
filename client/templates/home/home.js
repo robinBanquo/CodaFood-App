@@ -39,7 +39,7 @@ Template.home.helpers({
 });
 
 Template.home.events({
-    'click .category-header, mouseenter .category-header': function (event, instance) {
+    'mouseenter .category-header': function (event, instance) {
         //on recupere la valeur de l'id de la catégorie recherchée
         let category = event.currentTarget.id;
         //puis on la passe a la réactive var

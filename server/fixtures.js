@@ -55,8 +55,8 @@ if(Products.find().count() === 0) {
             firstName: "robin",
             lastName: "caramaschi",
             phone: "003838744",
-            address: "address",
-            city: "city",
+            address: "24 rue blabla",
+            city: "Alès",
             zipCode: 30100
         }
     })

@@ -22,9 +22,28 @@
                 <img src="/images/category_logo/Panier.png" alt="panier-logo" class="category-logo">
                 <h3>Panier</h3>
             </div>
+            <div class="col-sm-2  panierContent small visible-xs">
+                {{#if isProductsInCart}}
+                    {{#each productInCart in productsInCarts}}
+                        <div class="row">
+                            <div class="col-xs-2 row ">{{productInCart.quantity}}</div>
+                            <div class="col-xs-8 ">{{nameOfProduct productInCart.product_id}}</div>
+                            <div class="col-xs-2 row">{{subTotalPrice productInCart.product_id productInCart.quantity}}</div>
+                        </div>
+                    {{/each}}
+                    <h4>{{showPrice totalPrice}}</h4>
+                    <a href="{{pathFor 'panier'}}" class="btn btn-xs btn-warning center-block">
+                        <span class="glyphicon glyphicon-ok"></span> Commander
+                    </a>
+                    <br>
+                {{else}}
+                    <p>Aucun produit commandé</p>
+                    <br>
+                {{/if}}
+            </div>
         </div>
         {{! version desktop}}
-       <div class="xs-hidden row">
+       <div class="hidden-xs row">
            <div class="products {{selectedCategory}} col-sm-10 ">
                {{#each product in shownProducts}}
                    <div class="col-xs-4" id="product-{{@index}}">
@@ -32,7 +51,7 @@
                         </div>
                {{/each}}
            </div>
-           <div class="col-sm-2 panierContent small">
+           <div class="col-sm-2  panierContent small">
                {{#if isProductsInCart}}
                     {{#each productInCart in productsInCarts}}
                        <div class="row">
@@ -41,10 +60,10 @@
                            <div class="col-xs-2 row">{{subTotalPrice productInCart.product_id productInCart.quantity}}</div>
                        </div>
                     {{/each}}
-               <h4>{{totalPrice}}</h4>
-                   <button class="btn btn-xs btn-warning center-block">
+               <h4>{{showPrice totalPrice}}</h4>
+                   <a href="{{pathFor 'panier'}}" class="btn btn-xs btn-warning center-block">
                    <span class="glyphicon glyphicon-ok"></span> Commander
-                   </button>
+                   </a>
                    <br>
                    {{else}}
                <p>Aucun produit commandé</p>

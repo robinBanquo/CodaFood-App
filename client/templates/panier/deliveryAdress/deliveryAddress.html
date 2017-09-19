@@ -1,0 +1,75 @@
+<template name="deliveryAddress">
+    <h3>Adresse de livraison :</h3>
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            {{#if isDatabaseAddress}}
+            <div class="panel-heading"  style="background-color: #0ce3ac"  >
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" id="database-address">
+                        Livrer à mon adresse</a>
+                </h4>
+            </div>
+                {{else}}
+                <div class="panel-heading"  >
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" id="database-address">
+                            Livrer à mon adresse</a>
+                    </h4>
+                </div>
+        {{/if}}
+            <div id="collapse1" class="panel-collapse collapse in">
+                <div class="panel-body"><div class="row">
+                    <div class="col-xs-9">
+                        <p>{{currentUser.profile.address}}</p>
+                        <p><b>{{currentUser.profile.zipCode}} {{currentUser.profile.city}}</b></p>
+                    </div>
+                    <span class="col-xs-3 glyphicon glyphicon-ok"></span>
+                </div></div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+{{#unless isDatabaseAddress}}
+            <div class="panel-heading" style="background-color: #0ce3ac">
+
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" id="other-address">
+                        Utiliser une autre adresse</a>
+                </h4>
+            </div>
+    {{else}}
+    <div class="panel-heading">
+
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" id="other-address">
+                Utiliser une autre adresse</a>
+        </h4>
+    </div>
+    {{/unless}}
+            <div id="collapse2" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <form name="delivery" class="{{addressActive}}" style="padding: 5px">
+                            <div class="form-group">
+                                <label for="address">Adresse de livraison</label>
+                                <input type="text" class="form-control" name="address" id="address" placeholder="23 avenue du Général Tecktonik" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">Ville</label>
+                                <input type="text" class="form-control" name="city" id="city" placeholder="Alès, la Grand Combe, etc..." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="zipCode">Code Postal</label>
+                                <input type="text" class="form-control" name="zipCode" id="zipCode" placeholder="30100, 30104, etc..." required value="{{zipCode}}">
+                            </div>
+                    </form>
+                    <div class="text-center">
+                        <h4>OU</h4>
+                    </div>
+                    <button class="btn {{geolocActive}} btn-block" geoloc>
+                        <span class="glyphicon glyphicon-map-marker"></span> Utiliser ma position
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+

@@ -45,7 +45,12 @@ Template.login.events({
         let password = event.target.password.value;
         Meteor.loginWithPassword(email,password, function (error) {
             if(!error){
-            Router.go("home")
+                if(Session.get('redirectToCart')){
+                    Router.go("panier")
+                }else{
+                    Router.go("home")
+                }
+
             }else{
                 console.log(error)
             }

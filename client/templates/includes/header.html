@@ -11,9 +11,11 @@
     </div>
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav">
+          {{#if nbOfItem}}
         <li class="{{activeRouteClass 'panier'}}">
           <a href="{{pathFor 'panier'}}">Panier <span class="badge ">{{nbOfItem}}</span></a>
         </li>
+          {{/if}}
         <li class="{{activeRouteClass  'contact'}}">
           <a href="{{pathFor 'contact'}}">Contact</a>
         </li>

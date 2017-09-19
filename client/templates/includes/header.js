@@ -16,7 +16,7 @@ Template.header.helpers({
             count += parseInt(product.quantity)
         });
 
-        return count === 0 ? "" : count;
+        return count === 0 ? false : count;
     }
 });
 Template.header.events({
