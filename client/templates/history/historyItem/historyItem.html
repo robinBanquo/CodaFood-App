@@ -1,0 +1,41 @@
+<template name="historyItem">
+    <div class="panel-heading {{bgReceived}}" >
+        <h4 class="panel-title row">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                Commande n° <b>{{_id}}</b> du {{date}}</a> <span class="pull-right">prix : {{showPrice totalPrice}}</span>
+        </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse {{isOpenPanel}}">
+        <div class="panel-body">
+            {{#if eq deliveryAddress.type 'geoloc'}}
+                <p>
+                    <b>Coordonnées de livraison : </b>lat : {{deliveryAddress.location.lat}}, lng : {{deliveryAddress.location.lng}}
+                </p>
+            {{else}}
+             <p>
+                 <b>Adresse de livraison : </b>{{deliveryAddress.location.address}}, {{deliveryAddress.location.zipCode}} {{deliveryAddress.location.city}}
+             </p>
+            {{/if}}
+                <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Quantité</th>
+                        <th>Nom Produit</th>
+                        <th>prix Unitaire</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each product in products}}
+                        <tr>
+                            <td>{{product.quantity}}</td>
+                            <td>{{product.detail.name}}</td>
+                            <td>{{product.detail.price}}</td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</template>

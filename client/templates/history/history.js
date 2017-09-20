@@ -1,8 +1,8 @@
 Template.history.helpers({
     //add you helpers here
-    commandes : function () {
-        console.log(Commands.find({}, {fields:{'user_id' : Meteor.userId()}, sort : {sendDate : 1}}).fetch())
-        return Commands.find({}, {fields:{'user_id' : Meteor.userId()}, sort : {sendDate : 1}}).fetch()
+    commands : function () {
+        console.log( Commands.find({'user_id' : Meteor.userId()}).fetch())
+        return Commands.find({'user_id' : Meteor.userId()}).fetch()
     }
 });
 

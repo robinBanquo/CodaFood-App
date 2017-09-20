@@ -1,5 +1,9 @@
 <template name="history">
-{{#each command in commands}}
-    {{command.user_id}}
-{{/each}}
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+        {{#each command in commands}}
+            {{>historyItem command}}
+        {{/each}}
+    </div>
+</div>
 </template>

@@ -45,13 +45,15 @@ if(Products.find().count() === 0) {
     }
     _.each(products, function (product) {
         Products.insert(product)
-    })
+    });
 
     Accounts.createUser({
-        username: "robin",
-        email: "caramaschi@hotmail.com",
+        username: "admin",
+        email: "admin@hotmail.com",
         password:"123456",
+
         profile: {
+            isAdmin: true,
             firstName: "robin",
             lastName: "caramaschi",
             phone: "003838744",
@@ -59,5 +61,21 @@ if(Products.find().count() === 0) {
             city: "Alès",
             zipCode: 30100
         }
-    })
+    });
+    Accounts.createUser({
+        username: "robin",
+        email: "caramaschi@hotmail.com",
+        password:"123456",
+
+        profile: {
+            isAdmin: false,
+            firstName: "robin",
+            lastName: "caramaschi",
+            phone: "003838744",
+            address: "24 rue blabla",
+            city: "Alès",
+            zipCode: 30100
+        }
+    });
+
 }

@@ -30,7 +30,9 @@ Template.subscribe.events({
                 username: firstName + " " + lastName,
                 email: email,
                 password: password,
+
                 profile: {
+                    isAdmin : false,
                     firstName: firstName,
                     lastName: lastName,
                     phone: phone,

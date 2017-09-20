@@ -64,7 +64,7 @@ Template.panier.events({
 
         if(addressOk){
             Commands.insert(command, function () {
-
+            Router.go('history')
             });
         }
         console.log(command);
